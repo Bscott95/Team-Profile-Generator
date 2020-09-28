@@ -183,7 +183,7 @@ async function engPrompt() {
         });    
 
         // Create engineer Object
-        const engineer = new Engineer (engineerName, engineerId, engineerEmail,engineerGitHub)
+        const engineer = new Engineer (engineerName, engineerId, engineerEmail, engineerGitHub)
         employees.push(engineer); 
         console.log("126", engineer)
 
