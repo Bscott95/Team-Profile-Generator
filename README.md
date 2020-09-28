@@ -81,7 +81,6 @@ app.js         // Runs the application
 * All tests must pass.
 
 ### Classes
-The project must have the these classes: `Employee`, `Manager`, `Engineer`,
 `Intern`. The tests for these classes in the `tests` directory must all pass.
 
 The first class is an `Employee` parent class with the following properties and
