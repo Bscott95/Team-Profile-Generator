@@ -15,41 +15,14 @@ const { title } = require("process");
 
 let employees = []
 
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
+// Wrote code to use inquirer to gather information about the development team members,
+// and to create objects for each team member
 
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
+// After the user has input all employees desired, called the `render` function (required
+// above) and passed in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
 
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
-
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
-
-// class employee -> in that you have manager, eng, and intern. Each type has it's own questions/required data.
-
-// gather info with inquirer
-
-// Pass info to render function. Reder function returns a giant block of HTML.
-
-// filewrite the results to team.html
-
-// questions that requirer user input
-
-// can use for writing files
-const writeFileAsync = util.promisify(fs.writeFile);
+// Next it is writen it to a file named `team.html` in the `output` folder. 
 
 
 // =========VALIDATION===================
@@ -89,6 +62,8 @@ const textValidation = (input) => {
 // ==================PROMPT INPUT================
 // inquirer prompt about username for various values
 // doen't need to be async. for practice if an API was involved
+
+// Manager Prompts
 async function managerPrompt(){
     try {
         const { managerName } = await inquirer.prompt({
@@ -122,7 +97,7 @@ async function managerPrompt(){
             name: "engineerYN",
         });
         // Create Manager Object
-        const manager = new Manager (managerId, managerName, managerEmail, managerOfficeNumber)
+        const manager = new Manager (managerName, managerId,  managerEmail, managerOfficeNumber)
         employees.push(manager)
         console.log("126", manager)
 
@@ -149,6 +124,7 @@ async function managerPrompt(){
     }
 };
 
+// Eng Prompts
 async function engPrompt() {
     try {
         const { engineerName } = await inquirer.prompt({
@@ -210,6 +186,7 @@ async function engPrompt() {
     }
 };
 
+// Intern Prompts
 async function internPrompt() {
     try {
         const { internName } = await inquirer.prompt({
@@ -262,6 +239,6 @@ async function internPrompt() {
     }
 };
 
-// calls starter function
+// calls function to start the program
 managerPrompt();
 
